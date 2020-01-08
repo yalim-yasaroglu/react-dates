@@ -199,7 +199,7 @@ class SingleDatePicker extends React.PureComponent {
     } = this.props;
 
     if (!focused) return;
-    if (appendToBody && this.dayPickerContainer.contains(event.target)) return;
+    if ((this.dayPickerContainer.contains(event.path[0]) || this.container.contains(event.path[0]))) return;
 
     this.setState({
       isInputFocused: false,
